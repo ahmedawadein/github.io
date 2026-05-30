@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Ahmed Awadein – Ophthalmologist | دكتور أحمد عوضين – طبيب عيون</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Tajawal:wght@300;400;500;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d2240;
+    --deep: #071428;
+    --gold: #b8966e;
+    --gold-light: #d4b48a;
+    --cream: #f5f0e8;
+    --cream-mid: #ede5d6;
+    --white: #ffffff;
+    --text-dark: #1a1a2e;
+    --text-mid: #4a4a6a;
+    --text-light: #8a8aaa;
+    --accent: #2a6496;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── LANGUAGE TOGGLE ── */
+  .lang-toggle {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    z-index: 1000;
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--gold);
+    border-radius: 30px;
+    overflow: hidden;
+    background: rgba(13,34,64,0.85);
+    backdrop-filter: blur(8px);
+  }
+  .lang-toggle button {
+    padding: 6px 16px;
+    border: none;
+    background: transparent;
+    color: var(--gold-light);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .lang-toggle button.active {
+    background: var(--gold);
+    color: var(--deep);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--deep);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 80px 24px 60px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 20% 60%, rgba(184,150,110,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 70% at 80% 30%, rgba(42,100,150,0.15) 0%, transparent 60%);
+  }
+
+  .hero-ornament {
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    margin: 0 auto 40px;
+    animation: fadeIn 1.5s ease forwards;
+    opacity: 0;
+    animation-delay: 0.3s;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+    animation-delay: 0.6s;
+  }
+
+  .hero-name-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: 2px;
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+    animation-delay: 0.8s;
+  }
+
+  .hero-name-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    color: var(--gold-light);
+    margin-top: 8px;
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+    animation-delay: 1s;
+    direction: rtl;
+  }
+
+  .hero-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 28px auto;
+    animation: expandWidth 1s ease forwards;
+    transform: scaleX(0);
+    animation-delay: 1.2s;
+  }
+
+  .hero-title-en {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 6px;
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+    animation-delay: 1.3s;
+  }
+
+  .hero-title-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-light);
+    direction: rtl;
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+    animation-delay: 1.4s;
+  }
+
+  .hero-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 36px;
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+    animation-delay: 1.6s;
+  }
+
+  .hero-rating .stars { color: var(--gold); font-size: 18px; letter-spacing: 2px; }
+  .hero-rating .score {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--white);
+  }
+  .hero-rating .reviews {
+    font-size: 11px;
+    color: var(--text-light);
+    letter-spacing: 1px;
+  }
+
+  .hero-cta {
+    margin-top: 48px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+    animation-delay: 1.8s;
+  }
+
+  .btn-primary {
+    padding: 14px 36px;
+    background: var(--gold);
+    color: var(--deep);
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    padding: 14px 36px;
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+  .btn-outline:hover { background: rgba(184,150,110,0.1); transform: translateY(-2px); }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    background: rgba(13,34,64,0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(184,150,110,0.2);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 24px;
+  }
+
+  nav a {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 18px 4px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+  }
+  nav a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+  /* ── SECTIONS ── */
+  section { padding: 90px 24px; }
+
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .section-title-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+
+  .section-title-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 400;
+    color: var(--gold);
+    direction: rtl;
+    margin-top: 4px;
+  }
+
+  .section-rule {
+    width: 50px;
+    height: 2px;
+    background: var(--gold);
+    margin: 24px 0 40px;
+  }
+
+  /* ── ABOUT ── */
+  .about-section { background: var(--white); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-text p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-mid);
+    margin-bottom: 16px;
+  }
+
+  .about-text-ar {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .about-text-ar p {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 16px;
+    line-height: 2;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .stat-box {
+    padding: 24px;
+    border: 1px solid var(--cream-mid);
+    text-align: center;
+    background: var(--cream);
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--navy);
+    line-height: 1;
+  }
+
+  .stat-label-en {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-top: 6px;
+  }
+
+  .stat-label-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px;
+    color: var(--text-light);
+    direction: rtl;
+  }
+
+  /* ── SERVICES ── */
+  .services-section { background: var(--navy); }
+  .services-section .section-title-en { color: var(--white); }
+  .services-section .section-label { color: var(--gold); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+    margin-top: 50px;
+  }
+
+  .service-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(184,150,110,0.15);
+    padding: 40px 32px;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s;
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover { background: rgba(255,255,255,0.07); }
+
+  .service-icon { font-size: 32px; margin-bottom: 20px; }
+
+  .service-title-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .service-title-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 15px;
+    color: var(--gold-light);
+    direction: rtl;
+    margin-bottom: 14px;
+  }
+
+  .service-desc-en {
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .service-desc-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.45);
+    direction: rtl;
+    margin-top: 6px;
+  }
+
+  /* ── EXPERTISE ── */
+  .expertise-section { background: var(--cream); }
+
+  .expertise-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 48px;
+  }
+
+  .expertise-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px;
+    background: var(--white);
+    border-left: 3px solid var(--gold);
+  }
+
+  .expertise-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  .expertise-item-en {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.5;
+  }
+
+  .expertise-item-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px;
+    color: var(--text-mid);
+    direction: rtl;
+  }
+
+  /* ── CONTACT ── */
+  .contact-section { background: var(--deep); }
+  .contact-section .section-title-en { color: var(--white); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 50px;
+  }
+
+  .contact-info { display: flex; flex-direction: column; gap: 28px; }
+
+  .contact-item { display: flex; gap: 20px; align-items: flex-start; }
+
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(184,150,110,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    color: var(--gold);
+  }
+
+  .contact-label-en {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .contact-label-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    direction: rtl;
+  }
+
+  .contact-value-en {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+  }
+
+  .contact-value-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    direction: rtl;
+    line-height: 1.6;
+  }
+
+  .map-placeholder {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(184,150,110,0.15);
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    color: var(--text-light);
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .map-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(30%) brightness(0.85);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--deep);
+    border-top: 1px solid rgba(184,150,110,0.15);
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .footer-copy {
+    font-size: 11px;
+    color: var(--text-light);
+    letter-spacing: 1px;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes expandWidth { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+  /* ── LANGUAGE SWITCHING ── */
+  .ar-content { display: none; }
+  .en-content { display: block; }
+  .inline-ar { display: none; }
+  .inline-en { display: inline; }
+
+  body.lang-ar .ar-content { display: block; }
+  body.lang-ar .en-content { display: none; }
+  body.lang-ar .inline-ar { display: inline; }
+  body.lang-ar .inline-en { display: none; }
+  body.lang-ar { direction: rtl; }
+  body.lang-ar nav { direction: rtl; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    nav { gap: 20px; overflow-x: auto; justify-content: flex-start; padding: 0 16px; }
+    .hero-cta { flex-direction: column; align-items: center; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Language Toggle -->
+<div class="lang-toggle">
+  <button class="active" onclick="setLang('en')" id="btn-en">EN</button>
+  <button onclick="setLang('ar')" id="btn-ar">عربي</button>
+</div>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-ornament"></div>
+  <div class="hero-eyebrow">
+    <span class="inline-en">Eye Care Specialist · Giza, Egypt</span>
+    <span class="inline-ar">أخصائي طب العيون · الجيزة، مصر</span>
+  </div>
+  <h1 class="hero-name-en en-content">Dr. Ahmed Awadein</h1>
+  <h1 class="hero-name-ar ar-content">دكتور أحمد رضا عوضين</h1>
+  <h1 class="hero-name-ar en-content" style="font-size:clamp(1.4rem,3vw,2rem); margin-top:6px;">دكتور أحمد رضا عوضين</h1>
+  <div class="hero-divider"></div>
+  <p class="hero-title-en en-content">Consultant Ophthalmologist &amp; Strabismus Surgeon</p>
+  <p class="hero-title-ar en-content">استشاري طب وجراحة العيون والحول</p>
+  <p class="hero-title-en ar-content">استشاري طب وجراحة العيون والحول</p>
+  <p class="hero-title-ar ar-content">Consultant Ophthalmologist &amp; Strabismus Surgeon</p>
+  <div class="hero-rating">
+    <span class="stars">★★★★★</span>
+    <span class="score">4.8</span>
+    <span class="reviews">
+      <span class="inline-en">53 Google Reviews</span>
+      <span class="inline-ar">٥٣ تقييم على Google</span>
+    </span>
+  </div>
+  <div class="hero-cta">
+    <a href="tel:01284705461" class="btn-primary">
+      <span class="inline-en">📞 Book Appointment</span>
+      <span class="inline-ar">📞 احجز موعد</span>
+    </a>
+    <a href="#services" class="btn-outline">
+      <span class="inline-en">Our Services</span>
+      <span class="inline-ar">خدماتنا</span>
+    </a>
+  </div>
+</div>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#about">
+    <span class="inline-en">About</span><span class="inline-ar">عن الطبيب</span>
+  </a>
+  <a href="#services">
+    <span class="inline-en">Services</span><span class="inline-ar">الخدمات</span>
+  </a>
+  <a href="#expertise">
+    <span class="inline-en">Expertise</span><span class="inline-ar">التخصص</span>
+  </a>
+  <a href="#contact">
+    <span class="inline-en">Contact</span><span class="inline-ar">تواصل معنا</span>
+  </a>
+</nav>
+
+<!-- ── ABOUT ── -->
+<section class="about-section" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <span class="section-label">
+          <span class="inline-en">About the Doctor</span>
+          <span class="inline-ar">عن الطبيب</span>
+        </span>
+        <h2 class="section-title-en en-content">Dedicated to the Finest<br>Eye Care</h2>
+        <h2 class="section-title-ar ar-content">رعاية عيون متميزة<br>على أعلى مستوى</h2>
+        <h2 class="section-title-ar en-content">رعاية عيون متميزة على أعلى مستوى</h2>
+        <div class="section-rule"></div>
+        <div class="about-text en-content">
+          <p>Dr. Ahmed Awadein is a consultant ophthalmologist and strabismus surgeon based in Giza, Egypt, with extensive expertise in the diagnosis and surgical management of complex eye conditions in both adults and children.</p>
+          <p>He specializes in strabismus surgery, pediatric ophthalmology, and advanced intraocular lens implantation techniques, with a particular focus on achieving optimal visual outcomes for his patients.</p>
+          <p>Dr. Awadein combines clinical excellence with active research, contributing to peer-reviewed publications and international ophthalmic education.</p>
+        </div>
+        <div class="about-text about-text-ar ar-content">
+          <p>دكتور أحمد رضا عوضين استشاري طب وجراحة العيون والحول في الجيزة، مصر، يتمتع بخبرة واسعة في تشخيص وعلاج أمراض العيون المعقدة لدى البالغين والأطفال.</p>
+          <p>يتخصص في جراحة الحول، وطب عيون الأطفال، وزراعة العدسات داخل العين، مع تركيز خاص على تحقيق أفضل النتائج البصرية لمرضاه.</p>
+          <p>يجمع الدكتور عوضين بين التميز السريري والبحث العلمي النشط، بمساهمات في المجلات الطبية المحكّمة والتعليم الطبي الدولي.</p>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="stat-box">
+          <div class="stat-number">4.8</div>
+          <div class="stat-label-en">Google Rating</div>
+          <div class="stat-label-ar">تقييم Google</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">53+</div>
+          <div class="stat-label-en">Patient Reviews</div>
+          <div class="stat-label-ar">تقييمات المرضى</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">20+</div>
+          <div class="stat-label-en">Years Experience</div>
+          <div class="stat-label-ar">سنوات خبرة</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">∞</div>
+          <div class="stat-label-en">Commitment to Care</div>
+          <div class="stat-label-ar">الالتزام بالرعاية</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section class="services-section" id="services">
+  <div class="section-inner">
+    <span class="section-label">
+      <span class="inline-en">What We Offer</span>
+      <span class="inline-ar">ما نقدمه</span>
+    </span>
+    <h2 class="section-title-en en-content">Our Medical Services</h2>
+    <h2 class="section-title-ar ar-content">خدماتنا الطبية</h2>
+    <h2 class="section-title-ar en-content">خدماتنا الطبية</h2>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">👁️</div>
+        <div class="service-title-en en-content">General Eye Examination</div>
+        <div class="service-title-ar">فحص العيون الشامل</div>
+        <div class="service-desc-en en-content">Comprehensive eye exams for adults and children covering vision, pressure, retina, and overall ocular health.</div>
+        <div class="service-desc-ar ar-content">فحص شامل للعيون للبالغين والأطفال يشمل الرؤية والضغط والشبكية والصحة العامة للعين.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔄</div>
+        <div class="service-title-en en-content">Strabismus (Squint) Surgery</div>
+        <div class="service-title-ar">جراحة الحول</div>
+        <div class="service-desc-en en-content">Expert surgical correction of eye misalignment in children and adults, restoring proper eye alignment and binocular vision.</div>
+        <div class="service-desc-ar ar-content">تصحيح جراحي متخصص لانحراف العين لدى الأطفال والبالغين، لاستعادة توازن العين والرؤية الثنائية.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">👶</div>
+        <div class="service-title-en en-content">Pediatric Ophthalmology</div>
+        <div class="service-title-ar">طب عيون الأطفال</div>
+        <div class="service-desc-en en-content">Specialized care for children's eye conditions including amblyopia (lazy eye), congenital cataracts, and refractive errors.</div>
+        <div class="service-desc-ar ar-content">رعاية متخصصة لأمراض عيون الأطفال بما فيها الكسل البصري والساد الخلقي وأخطاء الانكسار.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔬</div>
+        <div class="service-title-en en-content">Pediatric Cataract Surgery</div>
+        <div class="service-title-ar">جراحة ساد الأطفال</div>
+        <div class="service-desc-en en-content">Advanced surgical management of congenital and developmental cataracts in children, including IOL implantation techniques.</div>
+        <div class="service-desc-ar ar-content">علاج جراحي متقدم للساد الخلقي والنمائي عند الأطفال، بما يشمل تقنيات زراعة العدسة داخل العين.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📐</div>
+        <div class="service-title-en en-content">Amblyopia Management</div>
+        <div class="service-title-ar">علاج الكسل البصري</div>
+        <div class="service-desc-en en-content">Diagnosis and treatment of amblyopia (lazy eye) in children using the latest evidence-based therapeutic approaches.</div>
+        <div class="service-desc-ar ar-content">تشخيص وعلاج الكسل البصري عند الأطفال باستخدام أحدث الأساليب العلاجية المبنية على الأدلة العلمية.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💡</div>
+        <div class="service-title-en en-content">Diplopia Evaluation</div>
+        <div class="service-title-ar">تقييم الرؤية المزدوجة</div>
+        <div class="service-desc-en en-content">Expert evaluation and management of double vision using advanced orthoptic tools and individualized treatment plans.</div>
+        <div class="service-desc-ar ar-content">تقييم متخصص وعلاج الرؤية المزدوجة باستخدام أدوات متقدمة وخطط علاجية فردية مخصصة.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERTISE ── -->
+<section class="expertise-section" id="expertise">
+  <div class="section-inner">
+    <span class="section-label">
+      <span class="inline-en">Clinical Focus</span>
+      <span class="inline-ar">المجالات التخصصية</span>
+    </span>
+    <h2 class="section-title-en en-content">Areas of Expertise</h2>
+    <h2 class="section-title-ar ar-content">مجالات التخصص</h2>
+    <h2 class="section-title-ar en-content">مجالات التخصص</h2>
+    <div class="section-rule"></div>
+    <div class="expertise-list">
+      <div class="expertise-item">
+        <div class="expertise-dot"></div>
+        <div>
+          <div class="expertise-item-en en-content">Strabismus Surgery</div>
+          <div class="expertise-item-ar">جراحة الحول</div>
+        </div>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-dot"></div>
+        <div>
+          <div class="expertise-item-en en-content">Pediatric Eye Surgery</div>
+          <div class="expertise-item-ar">جراحة عيون الأطفال</div>
+        </div>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-dot"></div>
+        <div>
+          <div class="expertise-item-en en-content">Congenital Cataracts</div>
+          <div class="expertise-item-ar">الساد الخلقي</div>
+        </div>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-dot"></div>
+        <div>
+          <div class="expertise-item-en en-content">IOL Implantation in Children</div>
+          <div class="expertise-item-ar">زراعة العدسات للأطفال</div>
+        </div>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-dot"></div>
+        <div>
+          <div class="expertise-item-en en-content">Amblyopia (Lazy Eye)</div>
+          <div class="expertise-item-ar">الكسل البصري</div>
+        </div>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-dot"></div>
+        <div>
+          <div class="expertise-item-en en-content">Diplopia &amp; Orthoptics</div>
+          <div class="expertise-item-ar">الرؤية المزدوجة والتقويم البصري</div>
+        </div>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-dot"></div>
+        <div>
+          <div class="expertise-item-en en-content">Brown Syndrome</div>
+          <div class="expertise-item-ar">متلازمة براون</div>
+        </div>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-dot"></div>
+        <div>
+          <div class="expertise-item-en en-content">Superior Oblique Disorders</div>
+          <div class="expertise-item-ar">اضطرابات العضلة المائلة العليا</div>
+        </div>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-dot"></div>
+        <div>
+          <div class="expertise-item-en en-content">Refractive Errors in Children</div>
+          <div class="expertise-item-ar">أخطاء الانكسار عند الأطفال</div>
+        </div>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-dot"></div>
+        <div>
+          <div class="expertise-item-en en-content">Ophthalmic Research</div>
+          <div class="expertise-item-ar">البحث العلمي في طب العيون</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <span class="section-label">
+      <span class="inline-en">Get in Touch</span>
+      <span class="inline-ar">تواصل معنا</span>
+    </span>
+    <h2 class="section-title-en en-content">Visit Our Clinic</h2>
+    <h2 class="section-title-ar ar-content">زيارة العيادة</h2>
+    <h2 class="section-title-ar en-content">زيارة العيادة</h2>
+    <div class="section-rule"></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label-en en-content">Address</div>
+            <div class="contact-label-ar ar-content">العنوان</div>
+            <div class="contact-value-en en-content">48 Sudan St, Ad Doqi, Dokki<br>Giza Governorate, Egypt</div>
+            <div class="contact-value-ar ar-content">٤٨ شارع السودان، العجوزة، الدقي<br>محافظة الجيزة، مصر</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label-en en-content">Phone</div>
+            <div class="contact-label-ar ar-content">الهاتف</div>
+            <div class="contact-value-en"><a href="tel:01284705461" style="color:rgba(255,255,255,0.75); text-decoration:none;">012 84705461</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <div class="contact-label-en en-content">Hours</div>
+            <div class="contact-label-ar ar-content">مواعيد العمل</div>
+            <div class="contact-value-en en-content">Opens 4 PM Sunday<br>Please call to confirm schedule</div>
+            <div class="contact-value-ar ar-content">يفتح الساعة ٤ م الأحد<br>يُرجى الاتصال للتأكيد</div>
+          </div>
+        </div>
+        <div style="margin-top: 8px;">
+          <a href="tel:01284705461" class="btn-primary">
+            <span class="inline-en">📞 Call to Book</span>
+            <span class="inline-ar">📞 اتصل للحجز</span>
+          </a>
+        </div>
+      </div>
+      <div class="map-placeholder">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.1!2d31.2!3d30.06!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAzJzM2LjAiTiAzMcKwMTInMDAuMCJF!5e0!3m2!1sen!2seg!4v1234567890!5m2!1sen!2seg"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Clinic Location">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-name">
+    <span class="inline-en">Dr. Ahmed Awadein · دكتور أحمد عوضين</span>
+    <span class="inline-ar">دكتور أحمد عوضين · Dr. Ahmed Awadein</span>
+  </div>
+  <p class="footer-copy">
+    <span class="inline-en">Consultant Ophthalmologist · Giza, Egypt · © 2025</span>
+    <span class="inline-ar">استشاري طب وجراحة العيون · الجيزة، مصر · © ٢٠٢٥</span>
+  </p>
+</footer>
+
+<script>
+  function setLang(lang) {
+    const body = document.body;
+    const btnEn = document.getElementById('btn-en');
+    const btnAr = document.getElementById('btn-ar');
+    if (lang === 'ar') {
+      body.classList.add('lang-ar');
+      btnAr.classList.add('active');
+      btnEn.classList.remove('active');
+      document.documentElement.setAttribute('dir', 'rtl');
+      document.documentElement.setAttribute('lang', 'ar');
+    } else {
+      body.classList.remove('lang-ar');
+      btnEn.classList.add('active');
+      btnAr.classList.remove('active');
+      document.documentElement.setAttribute('dir', 'ltr');
+      document.documentElement.setAttribute('lang', 'en');
+    }
+  }
+
+  // Smooth scroll for nav
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .stat-box, .expertise-item, .contact-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
