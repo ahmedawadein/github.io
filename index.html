@@ -573,6 +573,64 @@
     letter-spacing: 1px;
   }
 
+
+  /* ── WHATSAPP FLOAT ── */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff;
+    padding: 12px 20px 12px 14px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+    transition: all 0.3s;
+  }
+  .whatsapp-float:hover {
+    background: #20c45e;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(37,211,102,0.55);
+  }
+  .whatsapp-float svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+  /* ── TRUST BADGES ── */
+  .trust-bar {
+    background: var(--navy);
+    border-top: 1px solid rgba(184,150,110,0.2);
+    border-bottom: 1px solid rgba(184,150,110,0.2);
+    padding: 14px 24px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+  }
+  .trust-item span:first-child { font-size: 18px; }
+
+  @media (max-width: 768px) {
+    .trust-bar { gap: 20px; padding: 12px 16px; }
+    .trust-item { font-size: 10px; }
+    .whatsapp-float { bottom: 16px; right: 16px; padding: 10px 16px 10px 12px; font-size: 11px; }
+  }
+
   /* ── ANIMATIONS ── */
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
@@ -888,7 +946,69 @@
   }
 
 </style>
+
+<!-- ══ SEO META TAGS ══ -->
+<meta name="description" content="Prof. Dr. Ahmed Awadein — Egypt's leading strabismus surgeon and pediatric ophthalmologist. One of the top squint surgery specialists in Egypt, based in Cairo. Expert in lazy eye and children's eye conditions. 4.8★ on Google · 53 Reviews.">
+<meta name="keywords" content="strabismus surgeon Egypt, best strabismus surgeon Egypt, top strabismus surgeon Egypt, strabismus surgeon Cairo, squint surgery Egypt, pediatric ophthalmologist Cairo, best eye doctor Egypt, best eye doctor Cairo, دكتور رمد اطفال القاهرة, جراح الحول القاهرة, جراح حول مصر, أفضل جراح حول في مصر, أحمد عوضين, عيادة عيون الجيزة, جراحة الحول مصر">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Prof. Dr. Ahmed Awadein">
+<meta name="geo.region" content="EG-GZ">
+<meta name="geo.placename" content="Cairo, Egypt">
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ahmedawadein.github.io/">
+<meta property="og:title" content="Dr. Ahmed Awadein — Top Strabismus Surgeon in Egypt | Pediatric Ophthalmologist, Cairo">
+<meta property="og:description" content="Expert strabismus surgery and pediatric eye care in Cairo, Egypt. Professor at Cairo University · FRCS · Johns Hopkins Fellow. Book your appointment today.">
+<meta property="og:image" content="https://ahmedawadein.github.io/og-image.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_EG">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dr. Ahmed Awadein — Strabismus Surgeon, Cairo">
+<meta name="twitter:description" content="Expert strabismus surgery and pediatric ophthalmology in Cairo. Professor, Cairo University. 4.8★ on Google.">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://ahmedawadein.github.io/">
+
+<!-- Structured Data: Physician -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": "Prof. Dr. Ahmed Awadein",
+  "alternateName": "أ.د. أحمد رضا عوضين",
+  "description": "Professor of Ophthalmology at Cairo University. Leading strabismus surgeon and pediatric ophthalmologist in Egypt. MD, FRCS (Glasgow), Johns Hopkins Fellow.",
+  "url": "https://ahmedawadein.github.io/",
+  "telephone": "+20-01223911743",
+  "medicalSpecialty": ["Ophthalmology", "Pediatric Ophthalmology", "Strabismus Surgery"],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "53",
+    "bestRating": "5"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "48 Sudan Street, Ad Doqi",
+    "addressLocality": "Giza",
+    "addressCountry": "EG"
+  },
+  "sameAs": [
+    "https://www.youtube.com/channel/UCYHB-3wbSsBmEVHolsUGPaQ"
+  ]
+}
+</script>
 </head>
+
+<!-- ── WHATSAPP FLOAT BUTTON ── -->
+<a class="whatsapp-float" href="https://wa.me/201223911743" target="_blank" rel="noopener noreferrer">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  <span class="inline-en">Book via WhatsApp</span>
+  <span class="inline-ar" style="font-family:'Tajawal',sans-serif;">احجز عبر واتساب</span>
+</a>
+
 <body>
 
 <!-- Language Toggle -->
@@ -951,6 +1071,15 @@
   </a>
 </nav>
 
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-item"><span>🎓</span><span class="inline-en">Cairo University Professor</span><span class="inline-ar" style="font-family:'Tajawal'">أستاذ جامعة القاهرة</span></div>
+  <div class="trust-item"><span>🏥</span><span class="inline-en">FRCS · Johns Hopkins Fellow</span><span class="inline-ar" style="font-family:'Tajawal'">زمالة FRCS · جامعة جونز هوبكنز</span></div>
+  <div class="trust-item"><span>⭐</span><span class="inline-en">4.8★ · 53 Google Reviews</span><span class="inline-ar" style="font-family:'Tajawal'">٤.٨★ · ٥٣ تقييم</span></div>
+  <div class="trust-item"><span>📍</span><span class="inline-en">Dokki, Giza · Cairo</span><span class="inline-ar" style="font-family:'Tajawal'">الدقي، الجيزة</span></div>
+</div>
+
+
 <!-- ── ABOUT ── -->
 <section class="about-section" id="about">
   <div class="section-inner">
@@ -965,14 +1094,14 @@
         <h2 class="section-title-ar en-content">رعاية عيون متميزة على أعلى مستوى</h2>
         <div class="section-rule"></div>
         <div class="about-text en-content">
-          <p>Prof. Dr. Ahmed Awadein is a Professor of Ophthalmology at Cairo University (MD, FRCS), Fellow of the Royal College of Surgeons of Glasgow, and Fellow of Johns Hopkins University. He is one of Egypt's foremost specialists in pediatric ophthalmology and strabismus surgery, with over <strong>15,000 operations</strong> performed.</p>
-          <p>He specializes in strabismus surgery, pediatric ophthalmology, and advanced intraocular lens implantation, with a commitment to achieving the best possible visual outcomes for every patient.</p>
-          <p>Dr. Awadein is also a prolific researcher with more than <strong>70 peer-reviewed publications</strong> and book chapters, and is a regular speaker at international ophthalmology conferences.</p>
+          <p>Prof. Dr. Ahmed Awadein is a Professor of Ophthalmology at Cairo University (MD, FRCS), a Fellow of the Royal College of Surgeons of Glasgow, and a Fellow of Johns Hopkins University. He is widely regarded as one of Egypt&#8217;s leading authorities in strabismus surgery, serving patients from across Cairo, Giza, and throughout Egypt.</p>
+          <p>He specializes in strabismus surgery, pediatric ophthalmology, and advanced intraocular lens implantation techniques, with a particular focus on achieving optimal visual outcomes for his patients.</p>
+          <p>Dr. Awadein combines clinical excellence with active research, contributing to peer-reviewed publications and international ophthalmic education.</p>
         </div>
         <div class="about-text about-text-ar ar-content">
-          <p>أ.د. أحمد رضا عوضين أستاذ طب وجراحة العيون بجامعة القاهرة، حاصل على درجة MD وزمالة كلية الجراحين الملكية بغلاسكو (FRCS)، وزميل جامعة جونز هوبكنز الأمريكية. أجرى أكثر من <strong>١٥٠٠٠ عملية جراحية</strong> في تخصص الحول وطب عيون الأطفال.</p>
-          <p>يتخصص في جراحة الحول، وطب عيون الأطفال، وزراعة العدسات داخل العين، مع تركيز خاص على تحقيق أفضل النتائج البصرية.</p>
-          <p>للدكتور عوضين أكثر من <strong>٧٠ بحثاً علمياً</strong> في مجلات طبية محكّمة وفصول في كتب طبية، وهو متحدث دولي منتظم في مؤتمرات طب العيون.</p>
+          <p>أ.د. أحمد رضا عوضين أستاذ طب وجراحة العيون بجامعة القاهرة، حاصل على درجة MD وزمالة كلية الجراحين الملكية بغلاسكو (FRCS)، وزميل جامعة جونز هوبكنز بالولايات المتحدة الأمريكية. يُعدّ من أبرز جراحي الحول في مصر، ويستقبل مرضى من القاهرة والجيزة وسائر أنحاء مصر.</p>
+          <p>يتخصص في جراحة الحول، وطب عيون الأطفال، وزراعة العدسات داخل العين، مع تركيز خاص على تحقيق أفضل النتائج البصرية لمرضاه.</p>
+          <p>يجمع الدكتور عوضين بين التميز السريري والبحث العلمي النشط، بمساهمات في المجلات الطبية المحكّمة والتعليم الطبي الدولي.</p>
         </div>
       </div>
       <div class="about-photos">
@@ -987,26 +1116,26 @@
           <p class="photo-caption ar-content">في غرفة العمليات</p>
         </div>
       </div>
-      <div class="about-stats">
-        <div class="stat-box">
-          <div class="stat-number">15K+</div>
-          <div class="stat-label-en en-content">Surgeries Performed</div>
-          <div class="stat-label-ar ar-content">عملية أجراها</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-number">70+</div>
-          <div class="stat-label-en en-content">Publications</div>
-          <div class="stat-label-ar ar-content">بحثاً علمياً</div>
-        </div>
+      <div class="about-stats" style="display:none;">
         <div class="stat-box">
           <div class="stat-number">4.8</div>
-          <div class="stat-label-en en-content">Google Rating</div>
-          <div class="stat-label-ar ar-content">تقييم Google</div>
+          <div class="stat-label-en">Google Rating</div>
+          <div class="stat-label-ar">تقييم Google</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">53+</div>
+          <div class="stat-label-en">Patient Reviews</div>
+          <div class="stat-label-ar">تقييمات المرضى</div>
         </div>
         <div class="stat-box">
           <div class="stat-number">20+</div>
-          <div class="stat-label-en en-content">Years Experience</div>
-          <div class="stat-label-ar ar-content">سنوات خبرة</div>
+          <div class="stat-label-en">Years Experience</div>
+          <div class="stat-label-ar">سنوات خبرة</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">∞</div>
+          <div class="stat-label-en">Commitment to Care</div>
+          <div class="stat-label-ar">الالتزام بالرعاية</div>
         </div>
       </div>
     </div>
@@ -1220,48 +1349,6 @@
         <div class="edu-card-title-ar">متى تتصل بطبيبك فوراً؟</div>
         <div class="edu-card-text-en en-content">Contact us immediately if you notice: sudden vision loss, severe pain unresponsive to painkillers, thick yellow/green discharge, fever above 38.5°C, or severe increasing eyelid swelling. Note: redness alone is normal and not a danger sign.</div>
         <div class="edu-card-text-ar ar-content">اتصل فوراً عند: تراجع مفاجئ في الإبصار، ألم شديد لا يستجيب للمسكنات، إفرازات صفراء أو خضراء، حرارة فوق ٣٨.٥، تورم شديد متزايد في الجفون. الاحمرار وحده طبيعي ولا يستدعي القلق.</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-card-num">07</div>
-        <div class="edu-card-title-en en-content">Pre-Operative Checklist</div>
-        <div class="edu-card-title-ar">التحضير قبل العملية</div>
-        <div class="edu-card-text-en en-content">Bring your glasses to the operating room. Fast for 4–6 hours before surgery. Complete all lab tests in advance. Inform the nursing team of any health conditions or prior eye surgeries. Multiple pre-op visits may be needed for children.</div>
-        <div class="edu-card-text-ar ar-content">أحضر نظارتك إلى غرفة العمليات. صُم ٤–٦ ساعات قبل الجراحة. أنجز التحاليل المطلوبة. أبلغ فريق التمريض بأي حالة صحية أو جراحة عين سابقة. قد يحتاج الأطفال لزيارات تحضيرية متعددة.</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-card-num">08</div>
-        <div class="edu-card-title-en en-content">Understanding Redness</div>
-        <div class="edu-card-title-ar">الاحمرار بعد العملية</div>
-        <div class="edu-card-text-en en-content">Post-operative redness is completely normal and does not indicate infection or inflammation. It does not restrict activity. Day 1 the eye looks bright red; by weeks 4–6 redness is mostly gone. Sunglasses are optional — cosmetic only.</div>
-        <div class="edu-card-text-ar ar-content">الاحمرار بعد الجراحة طبيعي تماماً ولا يعني التهاباً أو عدوى. لا يمنع أي نشاط. يكون شديداً في اليوم الأول ثم يتلاشى تدريجياً خلال ٤–٦ أسابيع. النظارة الشمسية اختيارية لأغراض تجميلية فقط.</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-card-num">09</div>
-        <div class="edu-card-title-en en-content">Double Vision (Diplopia)</div>
-        <div class="edu-card-title-ar">الرؤية المزدوجة بعد الجراحة</div>
-        <div class="edu-card-text-en en-content">Some patients experience temporary double vision after surgery. This happens as the brain adapts to the new eye position, and may also result from intentional temporary overcorrection. It mostly resolves on its own within weeks.</div>
-        <div class="edu-card-text-ar ar-content">قد يعاني بعض المرضى من رؤية مزدوجة مؤقتة بعد العملية. يحدث هذا لأن الدماغ يحتاج وقتاً للتكيف مع وضع العين الجديد، وقد يكون مقصوداً من الجراح. في الغالب يزول من تلقاء نفسه خلال أسابيع.</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-card-num">10</div>
-        <div class="edu-card-title-en en-content">Timing of Results</div>
-        <div class="edu-card-title-ar">متى تظهر نتيجة العملية؟</div>
-        <div class="edu-card-text-en en-content">Results are not always immediate. Swelling temporarily hides the true position. Your surgeon may intentionally leave a slight overcorrection (especially for outward squint). The final assessment is made at 6–8 weeks post-op.</div>
-        <div class="edu-card-text-ar ar-content">النتيجة لا تظهر فوراً دائماً. التورم يُخفي الموضع الحقيقي مؤقتاً. قد يترك الجراح تصحيحاً زائداً مقصوداً. يُجرى التقييم النهائي في الأسبوعين ٦–٨ بعد العملية.</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-card-num">11</div>
-        <div class="edu-card-title-en en-content">Surgery &amp; Glasses</div>
-        <div class="edu-card-title-ar">الجراحة والنظارة الطبية</div>
-        <div class="edu-card-text-en en-content">In most cases, glasses are still needed after surgery. Surgery corrects the part of the squint that glasses cannot fix — not the refractive error itself. If hyperopia improves with age, glasses may be reduced later, or contact lenses may be used after age 18.</div>
-        <div class="edu-card-text-ar ar-content">في معظم الحالات تُحتاج النظارة بعد الجراحة. الجراحة تصحح الحول الذي لا تعالجه النظارة. إذا تحسنت طول النظر مع العمر، قد تقل الحاجة للنظارة لاحقاً، أو يمكن اللجوء للعدسات اللاصقة بعد سن ١٨.</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-card-num">12</div>
-        <div class="edu-card-title-en en-content">Activity After Surgery</div>
-        <div class="edu-card-title-ar">النشاط اليومي بعد الجراحة</div>
-        <div class="edu-card-text-en en-content">Full return to normal life is medically possible the day after surgery: TV, phone, computer, reading, sports, and outdoor activities are all permitted. The only exception is swimming, which must be avoided for 4 weeks. No special sunglasses required.</div>
-        <div class="edu-card-text-ar ar-content">العودة الكاملة للحياة الطبيعية ممكنة طبياً من اليوم التالي: تلفاز، هاتف، حاسوب، قراءة، رياضة، أنشطة خارجية — كلها مسموح بها. الاستثناء الوحيد: السباحة ممنوعة ٤ أسابيع.</div>
       </div>
     </div>
 
